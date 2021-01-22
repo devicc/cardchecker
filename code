@@ -25,6 +25,8 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 // My code:
 
+//Check if card number is valid or not
+//------------------------------------
 function validateCred(array) {
   const droppedArray = array.slice(0, array.length - 1)
   const droppedDigit = array[array.length - 1]
@@ -47,10 +49,11 @@ function validateCred(array) {
   }
 }
 
-
+//Finds invalid cards in a given nested array
+//-------------------------------------------
 let invalidCards = []
-function findInvalidCards(nestedArrays) {
-  nestedArrays.forEach(arr => {
+function findInvalidCards(nestedArray) {
+  nestedArray.forEach(arr => {
     validateCred(arr)
     if (validateCred(arr) === "Invalid") {
       invalidCards.push(arr)
@@ -59,6 +62,8 @@ function findInvalidCards(nestedArrays) {
   return invalidCards
 }
 
+//Identify which companies have issued invalid cards
+//--------------------------------------------------
 function idInvalidCardCompanies(invalidArray) {
   let invalidCompanies = []
   invalidArray.forEach(invalidCard => {
@@ -83,4 +88,7 @@ function idInvalidCardCompanies(invalidArray) {
   console.log(invalidCompanies)
   return invalidCompanies
 }
+
+//Test
+//----
 idInvalidCardCompanies(findInvalidCards(batch))
