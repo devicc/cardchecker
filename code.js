@@ -25,8 +25,8 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 // My code:
 
-//Check if card number is valid or not
-//------------------------------------
+//Check if card number is valid or not using the Luhn algorithm
+//-------------------------------------------------------------
 function validateCred(array) {
   const droppedArray = array.slice(0, array.length - 1)
   const droppedDigit = array[array.length - 1]
